@@ -116,6 +116,11 @@
     @media (min-width:$bp3) {
       padding: 50px 0 0;
     }
+
+    &__left, &__right {
+      flex: 1 1 50%
+    }
+
     
     &__left {
       margin-right: 50px;
@@ -138,6 +143,33 @@
       }
     }
 
+    &__right {
+      .news {
+        background-color: $primary;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 20px;
+        color: $font;
+
+        h6,p {
+          padding: 20px 0;
+        }
+
+        h6 {
+          font-size: 23px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      
+        @media (min-width:$bp1) {
+          margin-top: 0px;
+        }
+      }
+    }
+
+    
     .greenhouse, .magic {
       &__title {
         margin-bottom: 10px;

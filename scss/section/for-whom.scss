@@ -1,3 +1,16 @@
+.page-template-front_page {
+  .for-whom {
+    &__cards {
+      gap: 20px !important;
+      li {
+        max-width: 300px !important;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
 .for-whom {
   padding: 25px 0;
   @media (min-width:$bp2) {

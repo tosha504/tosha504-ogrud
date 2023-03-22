@@ -47,7 +47,9 @@
         text-align: left;
         flex: 1 1 100%;
         max-width: 300px;
-        
+        a {
+          color: $font;
+        }
 
         @media (min-width:$bp1) {
           flex: 1 1 45%;

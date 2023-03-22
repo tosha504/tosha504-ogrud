@@ -38,18 +38,17 @@ $bg_image = get_sub_field( 'bg_image' );
             $new_day = date( "d", $date );
             $new_year = date( "Y", $date );
             $new_month = date( "F", $date );
-          
             $trimWordsTitle = 7;
             $titleCount = wp_trim_words( $event['event']['title'], $trimWordsTitle );
             $trimWordsDescr = 15;
             $descrCount = wp_trim_words( $event['event']['descr'], $trimWordsDescr );
-            echo '<li>' .
+            echo '<li><a href="' . $event['event']['link']['url'] . '">' .
               '<div class="year-date"><p>' . __( $new_month ) . '</p><p>' .$new_year . '</p></div>' .
               '<p class="day">' . $new_day  . '</p>' . 
               '<h5>' . $titleCount . '</h5>' .
               '<p class="time">' . $event['event']['time'] . '</p>' . 
               '<p class="descr">' . $descrCount . '</p>' .
-            '</li>';
+            '</a></li>';
           } 
           echo '</ul>';
         } 

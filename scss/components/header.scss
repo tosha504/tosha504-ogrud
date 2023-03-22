@@ -373,12 +373,46 @@
   }
 
   .menu-item-has-children > a {
+    // transition: rotate 0.45s;
+    // @media (min-width: $bp3) {
+    //   &:hover {
+    //     color: $primary;
+    //     &::after {
+    //       transform: rotate(180deg);
+    //     }
+    //   }
+    // }
+    // &::after {
+    //   content: "";
+    //   width: 15px;
+    //   height: 15px;
+    //   background-image: url(../assets/img/chevron-up.svg);
+    //   background-size: 17px 17px;
+    //   vertical-align: middle;
+    //   margin-left: 3px;
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   display: inline-block;
+    //   -webkit-transition: .3s ease-in-out;
+    //   transition: .3s ease-in-out;
+    //   position: relative;
+      
+    // }
+  }
+
+  .menu-item-has-children {
     position: relative;
     transition: rotate 0.45s;
-    &.active {
-      color: $primary;
-      &::after {
-        transform: rotate(180deg);
+    @media (min-width: $bp3) {
+      &:hover {
+        color: $primary;
+        &::after {
+          transform: rotate(180deg);
+        }
+        ul {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
     &::after {
@@ -397,11 +431,25 @@
       position: relative;
       
     }
-  }
-
-  .menu-item-has-children {
     ul {
-      display: none;
+      background-color: $white;
+      position: absolute;
+      z-index: 9999;
+      padding: 5px 10px;
+      left: -20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.35s;
+      li {
+        padding: 5px 0;
+        a {
+          white-space: nowrap;
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+      // display: none;
     }
   }
 } 
