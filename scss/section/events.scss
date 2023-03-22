@@ -1,0 +1,128 @@
+.events {
+  padding: 25px 15px;
+  @media (min-width:$bp1) {
+    padding: 50px 30px;
+  }
+  @media (min-width:$bp4) {
+    padding: 50px 0;
+  }
+  display: flex;
+  flex-wrap: wrap;
+ 
+
+  &__left {
+    display: none;
+    @media (min-width:$bp3) {
+      overflow: hidden;
+      // border-radius: 20px;
+      display: flex;
+      flex: 1 1 100%;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px;
+      height: 50vh;
+    }
+    @media (min-width:$bp4) {
+      flex: 0 1 50%;
+      height: 100%;
+    }
+    @media (min-width:$bp5) {
+      flex: 0 1 50%;
+      height: 80vh;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__right {
+    @media (min-width:$bp3) {
+      flex: 0 1 100%;
+      padding: 0 5%;
+    }
+    @media (min-width:$bp4) {
+      flex: 0 1 50%;
+    }
+    @media (min-width:1500px) {
+      padding: 0 10% 0 5%;
+    }
+    &_pre {
+      background-color: $primary;
+      color: $white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 18px;
+      margin-bottom: 25px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 39px;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+
+    .wrap {
+      @media (min-width:$bp1) and (max-width:$bp4) {
+        display: flex;
+        gap: 20px;
+      }
+      &__item {
+        border-top: 1px solid #c8c8c8;
+        padding-top: 10px;
+        @media (min-width:$bp1) and (max-width:$bp4) {
+          flex: 1 1 50%;
+        }
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+        &_info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          
+          .category {
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 300;
+          }
+
+          p {
+            margin-bottom: 0 !important;
+          }
+        }
+
+        h3 {
+          font-size: 30px;
+          margin-bottom: 30px;
+          color: $font;
+          transition: 0.3s;
+        }
+
+        p {
+          opacity: 0.702;
+          font-size: 18px;
+          color: #000000;
+          font-weight: 300;
+          margin-bottom: 25px;
+        }
+
+        a {
+          &:hover {
+            .link-arrow-green, h3 {
+              color: $themeYeelow;
+            }
+            .link-arrow-green {
+              &::after {
+                background: url(../assets/img/arrow-yellow.svg) right / cover no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.wpcf7-form {
+
+  .flex {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    @media (min-width:$bp3) {
+      gap: 40px;
+    }
+    p {
+      flex: 1 1 100%;
+      @media (min-width:$bp1) {
+        flex: 1 1 40%;
+      }
+    }
+  }
+
+  input, textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $font;
+    padding: 10px 0;
+    font-size: 15px;
+    &::placeholder {
+      color: $font;
+    }
+  }
+
+  .btn {
+    background-color: black;
+    color: $white;
+    border: none;
+    max-width: 100px;
+  }
+}

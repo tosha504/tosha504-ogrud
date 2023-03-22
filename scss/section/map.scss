@@ -1,0 +1,16 @@
+.map {
+  iframe { 
+    display: flex;
+    border:0;
+    height: auto;
+    width: 100%;
+    min-height: 45vh;
+    filter: grayscale(1);
+    transition: ease-in-out 0.35s ;
+    @media (min-width:$bp3) {
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+body {
+  &.home { 
+    .card {
+      &__body {
+        background-color: $white;
+      }
+    }
+  }
+}

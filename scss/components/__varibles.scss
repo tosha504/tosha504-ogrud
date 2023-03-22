@@ -1,0 +1,61 @@
+//Fonts
+$mon : 'Montserrat', sans-serif;
+$play: 'Playfair Display', serif;
+
+
+//Colors    
+$font:#2d2d2d;
+$primary: #16823A; 
+$themeRed: #7A2E39;
+$white: #fff;
+$gray: #818182;
+$cream: #FAF8F5;
+$themeYeelow: #D7B322;
+$preFotter: #212223;
+
+//break-points
+$bp1: 576px + 1;
+$bp2: 768px + 1;
+$bp3: 992px + 1;
+$bp4: 1200px + 1;
+$bp5: 1440px + 1;
+
+@mixin fontz($fmx,$fmn){
+    font-size: calc(#{$fmx} + (#{$fmn} * (100vw / 1920)));
+}
+
+@mixin line($lmx,$lmn){
+    line-height: calc(#{$lmx} + (#{$lmn} * (100vw / 1400)));
+}
+
+.btn {
+    background-color: $primary;
+    font-size: 12px;
+    font-weight: 300;
+    max-width: 151px;
+    border-radius: 21px;
+    padding: 10px 20px;
+    // color: $white !important;
+    &:hover {
+        background-color: #115227;
+    }
+
+    &__border {
+        border: 1px solid $primary;
+        padding: 10px 30px;
+        border-radius: 40px;
+        font-weight: 600;
+        color: $font;
+        white-space: nowrap;
+
+        @media (min-width:$bp3) {
+            &:hover {
+                background-color: $primary;
+                border: 1px solid transparent;
+                color: $white;
+            }
+        }
+    }
+}
+
+

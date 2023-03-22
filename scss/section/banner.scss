@@ -1,0 +1,35 @@
+.banner {
+  // padding: 200px 0;
+  min-height: 75vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  
+  &__invite {
+    width: 100%;;
+    background-position: bottom;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 55px 50px 65px 0;
+    @media (min-width:$bp2) {
+      max-width: 70vw;
+      height: 35vh;
+    }
+    @media (min-width:$bp3) {
+      max-width: 55vw;
+      height: 45vh;
+    }
+    @media (min-width:$bp5) {
+      max-width: 35vw;
+    }
+    &_wrap {
+      &-title {
+        @include fontz(24px, 30);
+        color: $cream;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

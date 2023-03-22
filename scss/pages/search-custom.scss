@@ -1,0 +1,141 @@
+.custom-search {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width:$bp2) {
+    gap: 20px;
+    align-self: start;
+  }
+
+  .calendar {
+    background-color: $primary;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+    border-radius: 20px;
+    color: $white;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 100%;
+    max-height: 200px;
+    @media (min-width:$bp2) {
+      flex: 1 1 20%;
+    }
+    @media (min-width:$bp3) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    position: relative;
+    // input {
+    //   position: absolute;
+    //   top: 0 ;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   opacity: 0;
+    //   &::-webkit-calendar-picker-indicator{
+    //     opacity: 0;
+    //     background-color: red;
+    //     cursor: pointer;
+    //     position:absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
+  }
+
+  &__items {
+    @media (min-width:$bp2) {
+      border-left: 2px solid $primary;
+      margin-left: 50px;
+      padding-left: 50px;
+      flex: 1 1 60%;
+      gap: 25px;
+    }
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    li {
+      &.active {
+        background-color: $primary;
+        color: $white;
+        @media (min-width:$bp3) {
+          &:hover {
+            color: $font;
+          }
+        }
+
+      }
+      transition: 0.35s;
+      @media (min-width:$bp3) {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.box {
+  
+  display: none;
+  align-items: center;
+  justify-content: center;
+	border-radius: 3px;
+	font-size: 30px;
+	padding: 1em;
+	position: relative;
+	margin-bottom: .25em;
+	vertical-align: top;
+	transition: .3s color, .3s border, .3s transform, .3s opacity;
+  &.active {
+  	display: flex;
+  }
+}
+.loader {
+  display: inline-block;
+	width: 2em;
+	height: 2em;
+	color: inherit;
+	vertical-align: middle;
+	pointer-events: none;
+  border: .2em solid transparent;
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: 1s loader linear infinite;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: -.2em;
+    ;
+    left: -.2em;
+    ;
+    border: .2em solid currentcolor;
+    border-radius: 50%;
+    opacity: .5;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  text-align: center;
+  color: red;
+  font-size: 20px;
+  padding: 20px 0;
+}

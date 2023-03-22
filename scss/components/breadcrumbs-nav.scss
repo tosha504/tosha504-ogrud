@@ -1,0 +1,27 @@
+.breadcrumbs-nav {
+  position: relative;
+  padding: 25px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 2px;
+    background-color: #c8c8c8;
+    top: 10px;
+  }
+
+  a, span {
+    color: $primary;
+    // font-size: 18px;
+    font-weight: 400;
+  }
+
+  a {
+    @media (min-width:$bp3) {
+      &:hover {
+        opacity: 0.6;   
+      }
+    }
+  }
+}

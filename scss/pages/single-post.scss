@@ -1,0 +1,163 @@
+.single {
+
+  .title {
+    padding: 25px 0;
+    background-color: $cream;
+
+    h1 {
+      @include fontz(20px,33);
+      max-width: 900px;
+    }
+
+    &__wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .number {
+        color: $primary;
+        position: relative;
+        font-weight: bold;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 110%;
+          width: 50px;
+          height: 50px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: url(../assets/img/number-sevings.svg) no-repeat center/cover;
+        }
+      }
+    }
+  }
+
+  .taxonomy__bottom_email {
+    a {
+      color: $white !important;
+    }
+  }
+
+  .sub-title {
+    color: $primary;
+    font-weight: bold;
+  }
+  
+  .content {
+    font-family: $mon;
+    line-height: 170%;
+    
+    .container {
+      border-bottom: 2px solid #c8c8c8;
+    }
+    
+    img {
+      padding: 50px 0;
+      width: 100%;
+      max-height: 80vh;
+      object-fit: cover;
+    }
+    font-weight: 400;
+    a {
+      color: $primary;
+      @media (min-width:$bp3) {
+        &:hover {
+          opacity: 0.6;   
+        }
+      }
+    }
+    
+    p {
+      span {
+        font-size: 20px;
+        &.green {
+          color: $primary;
+        }
+      }
+    }
+    
+    &__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    &__download,&__recipe {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__recipe {
+      max-width: 450px;
+      color: $primary;
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid $primary;
+
+      ul {
+        li {
+          list-style-type: square;
+        }
+      }
+
+      p {
+        padding: 20px 0;
+      }
+
+    }
+
+    &__download {
+      max-width: 250px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      a {
+        color: $font;
+        &:hover {
+          opacity: 1; 
+          color: $white;  
+        }
+      }
+    }
+
+    .recipe-title {
+      font-size: 30px;
+      font-family: $play;
+    }
+    
+    &__text {
+      padding: 20px 0;
+      @media (min-width:$bp3) {
+        max-width: 40vw;
+        width: 100%;
+        margin-left: auto; 
+        // padding: 0;
+      }
+      &_preparation {
+        margin-top: 50px;
+        color: $primary;
+      }
+    }
+  }
+
+  .title-form {
+    @include fontz(30px, 20);
+    padding: 50px 0;
+  }
+
+  .arrangeCourse__header--title {
+    background-color: $primary;
+  }
+
+  .btn-primary {
+    background-color: $font;
+    color: $white !important;
+  }
+
+  .content-course__bottom {
+    span {
+      display: block;
+      font-weight: bold;
+    }
+  }
+}

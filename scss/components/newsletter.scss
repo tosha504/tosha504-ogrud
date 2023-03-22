@@ -1,0 +1,123 @@
+.newsletter {
+  padding: 25px 0;
+  @media (min-width:$bp2) {
+    padding: 50px 0;
+  }
+
+  &__body {
+    border-radius: 20px;
+    padding: 10px;
+    @media (min-width:$bp1) {
+    }
+    @media (min-width:$bp3) {
+      padding: 110px 20% 80px 80px;
+    }
+    h3 {
+      @include fontz(39px,10);
+      margin-bottom: 25px;
+      @media (min-width:$bp3) {
+        margin-bottom: 70px;
+      }
+    }
+    input[type=email] {
+      border: none;
+      background: transparent;
+      padding: 10px 0;
+      /* color: #c8c8c8; */
+      width: 100%;
+      border-bottom: 1px solid #494949;
+      font-size: 15px;
+      max-width: 500px;
+      &::placeholder {
+        color: #494949;
+      }
+    }
+
+    &_box {
+      display: flex;
+      padding: 20px 0;
+      max-width: 500px;
+
+      .inpcheck {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Hide the browser's default checkbox */
+      .inpcheck input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+        border-radius:2px;
+        border: 1px solid #494949;
+      }
+      
+      /* When the checkbox is checked, add a blue background */
+      .inpcheck input:checked ~ .checkmark {
+        background-color: $primary;
+        border: none;
+      }
+      
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      /* Show the checkmark when checked */
+      .inpcheck input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      /* Style the checkmark/indicator */
+      .inpcheck .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      p {
+        opacity: 0.702;
+        // font-size: 14px;
+        line-height: 21px;
+        color: #000000;
+      }
+    }
+
+    button[type=submit] {
+      background: #000;
+      padding: 20px 30px;
+      color: $white;
+      font-size: 14px;
+      border-radius: 50px;
+      border: none;
+    }
+  }
+}

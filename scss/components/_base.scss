@@ -1,0 +1,185 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  @include fontz(14px ,2);
+	height: 100%;
+	width: 100%;
+  position: relative;
+  font-weight: 300;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	color: $font;
+  font-family: $mon;
+  margin: 0 !important;
+
+  &.wcag_big {
+    * { 
+      line-height: 1!important;
+      font-family: $mon!important;
+      font-weight: 600!important;
+      h2, h3, h4, h5, h6 {
+        // font-size: calc(20px + ( 20 * (100vw / 1920)))!important; 
+        font-size: 1.375em; 
+        line-height: 1 !important;
+      }
+    }
+      
+    p, span {
+      // font-size: calc(20px + ( 5 * (100vw / 1920)))!important;  
+      font-size: 1.375em; 
+      // color: 000;
+    }
+    h1 {
+      font-size: calc(30px + ( 50 * (100vw / 1920)))!important;  
+      line-height: 1 !important;
+    }
+    h2, h3, h4, h5, h6 {
+      // font-size: calc(20px + ( 20 * (100vw / 1920)))!important; 
+      font-size: 1.375em; 
+      line-height: 1 !important;
+    }
+    a {
+      font-size: 1.375em !important; 
+    }
+  }
+
+  &.wcag_contrast {
+    div,section {
+      svg {
+        .st0 {
+          fill : #FFF;
+          color: #fff !important;
+        }
+      }
+      background: black !important;
+      img {
+        opacity: 0.5;
+      }
+      p, span, a, h1 , h2, h3, h4, h5, h6 ,div, button{
+        color: yellow !important;
+      }
+    }
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $play;
+  font-weight: 600;
+}
+
+.fixed-page {
+  overflow: hidden;
+}
+
+.wrapper{
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-main{
+	flex: 1 1 100%;
+}
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @media (max-width:$bp4) {
+    max-width: 1200px;
+  }
+
+  @media (max-width:$bp3) {
+    max-width: 950px;
+  }
+  
+  @media (max-width:$bp2) {
+    max-width: 750px;
+  }
+
+  @media (max-width:$bp1) {
+    padding: 0 15px;
+  }
+}
+ul {
+  list-style: none;
+ 
+}
+a,
+a:active,
+a:hover {
+  outline: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+button,
+button:active,
+button:focus,
+button:hover,
+input,
+input:active,
+input:focus,
+input:hover,
+textarea,
+textarea:focus {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+
+button {
+  transition: 0.35s;
+  &:hover{
+    cursor: pointer;
+  }
+  max-width: 200px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.privacy {
+  flex: 1 1 100%;
+  padding: 20px 0;
+  a {
+    color: $white;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+//delet after create newsleter
+.news {
+  background-color: $primary;
+  border-radius: 20px;
+  padding: 120px;
+  margin-top: 20px;
+
+  @media (min-width:$bp1) {
+    margin-top: 0px;
+  }
+}
+// * {
+//   background: #000 !important;
+// }
+
+.btn-wrap {
+  padding: 20px 0;
+}
+
+
+.disabled {
+  opacity: .5;
+  pointer-events: none;
+}
