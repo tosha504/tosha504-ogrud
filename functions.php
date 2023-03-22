@@ -151,9 +151,7 @@ $realestate_includes = array(
 	'/customizer.php',			//	Customizer additions.
 	'/template-tags.php',		// 	Custom template tags for this theme.	
 	'/template-functions.php',	//	Functions which enhance the theme by hooking into WordPress.
-	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
-	'/mega-menu.php',
-
+	
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
@@ -284,3 +282,10 @@ function show_archive_top() {
 	</div>
 <?php }
 
+function add_menu_link_class( $atts, $item, $args ) {
+  if (property_exists($args, 'link_class')) {
+    $atts['class'] = $args->link_class;
+  }
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
