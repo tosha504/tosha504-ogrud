@@ -40,9 +40,8 @@ function get_post_tag() {
  
   if(isset( $_POST['tag']) && !empty( $_POST['tag'])) {
     $tag = sanitize_text_field( $_POST['tag']);   
-    
     $post_type = array(
-      // 'posts_per_page' => -1,
+      'posts_per_page' => -1,
       'post_type' => array( 'post', 'course', 'knoweledge_base' ),
     );
 
@@ -64,13 +63,13 @@ function get_post_tag() {
     $query = new WP_Query( $post_type );
     if ( $query->have_posts() ) {
       while ( $query->have_posts() ) {
+
         $query->the_post();
         $terms = wp_get_post_terms( get_the_ID(), array( 'categories', 'category-course' ) );
         $term_for_custom_page = $terms ?  $terms[0]->name : null;
         // var_dump($term_for_custom_page);
-        if(!empty(get_the_ID()) && !empty(get_the_title()) && !empty(get_the_content()) && !empty( $term_for_custom_page) ) {
           echo create_blog_card( get_the_ID(), get_the_title(), get_the_content(), $term_for_custom_page );
-        } 
+        
       }
     } else {
       _e('Oops. Nothing found!', 'ogrud_botamiczny');

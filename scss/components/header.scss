@@ -78,6 +78,7 @@
         color: $font;
         font-size: 18px;
         font-weight: 300;
+        
       }
     }
   }
@@ -110,129 +111,6 @@
       .header__mega {
         visibility: visible;
         opacity: 1;
-      }
-    }
-  }
-
-  &__mega {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 90%;
-    background: #fff;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transform: translateY(5px);
-    transform: translateY(5px);
-    -webkit-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out;
-    box-shadow: rgb(0 0 0 / 10%) 0 4px 12px;
-    z-index: 99;
-    overflow-x: hidden;
-
-  }
-
-  .mega {
-    .container, .items {
-      display: flex;
-    }
-
-    &__container {
-      &_items, &_end {
-        padding: 30px 0;  
-      }
-
-      &_items {
-        flex: 1 1 70%;
-      }
-
-      &_end {
-        flex: 1 1 30%;
-      }
-    }
-
-    a.btn{
-      color: #fff;
-      text-transform: uppercase;
-    }
-
-    .sub-item {
-      margin-right: auto;
-     
-      &__header {
-        &_icon {
-          display: flex;
-          align-items: center;
-          img {
-            width: 40px;
-            height: 40px;
-          }
-        }
-        &_link {
-          margin: 10px 0;
-          a {
-            font-weight: bold;
-            color: $primary;
-            text-transform: uppercase;
-          }
-        }
-
-        &_description {
-          font-size: 14px;
-        }
-      }
-
-      &__list {
-        margin: 20px 0;
-
-        li {
-          &:not(:last-child) {
-            margin: 10px 0;
-          }
-          .btn-primary {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-          }
-        }
-
-        &_item {
-          font-size: 13px;
-        }
-      }
-    }  
-    
-    .end {
-      &__header {
-        &_title {
-          font-size: 18px;
-          font-weight: bold;
-          text-transform: uppercase;
-        }
-
-        &_description {
-          font-size: 14px;
-          padding: 10px 0;
-        }
-      }
-
-      &__content {
-        &_list-items {
-          display: flex;
-          align-items: center;
-        }
-        &_list-item {
-          margin: 10px 0 20px;
-          img {
-            max-width: 65px;
-            width: 100%;
-            border-radius: 10px;
-            margin-right: 10px;
-          }
-          span {
-            font-size: 14px;
-          }
-        }
       }
     }
   }
@@ -372,33 +250,6 @@
     }
   }
 
-  .menu-item-has-children > a {
-    // transition: rotate 0.45s;
-    // @media (min-width: $bp3) {
-    //   &:hover {
-    //     color: $primary;
-    //     &::after {
-    //       transform: rotate(180deg);
-    //     }
-    //   }
-    // }
-    // &::after {
-    //   content: "";
-    //   width: 15px;
-    //   height: 15px;
-    //   background-image: url(../assets/img/chevron-up.svg);
-    //   background-size: 17px 17px;
-    //   vertical-align: middle;
-    //   margin-left: 3px;
-    //   background-repeat: no-repeat;
-    //   background-position: center;
-    //   display: inline-block;
-    //   -webkit-transition: .3s ease-in-out;
-    //   transition: .3s ease-in-out;
-    //   position: relative;
-      
-    // }
-  }
 
   .menu-item-has-children {
     position: relative;
@@ -406,6 +257,7 @@
     @media (min-width: $bp3) {
       &:hover {
         color: $primary;
+        cursor: pointer;
         &::after {
           transform: rotate(180deg);
         }
@@ -437,6 +289,7 @@
       z-index: 9999;
       padding: 5px 10px;
       left: -20px;
+      top: 40px;
       opacity: 0;
       visibility: hidden;
       transition: 0.35s;
@@ -450,6 +303,42 @@
         }
       }
       // display: none;
+    }
+  }
+
+  .shop {
+    position: relative;
+    margin-right:25px;
+
+    &__counter {
+      position: absolute;
+      top: -10px;
+      right: -20px;
+      font-size: 13px;
+      width: 20px;
+      height: 20px;
+      justify-content: center;
+      border-radius: 50%;
+      background: $primary;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__shop {
+    li {
+      width: 24px;
+      height: 27px;
+      position: relative;
+      a {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        background: url(../assets/img/koszyk-sushi-hero.svg) no-repeat center/cover;
+      }
     }
   }
 } 

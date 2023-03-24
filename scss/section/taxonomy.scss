@@ -15,6 +15,7 @@
     }
     h2 {
       @include fontz(25px, 25);
+      font-weight: 500;
     }
   }
 

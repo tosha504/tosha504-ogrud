@@ -16,7 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="https://use.typekit.net/ocx2lgj.css">
 	<?php wp_head(); ?>
 </head>
 
@@ -70,7 +69,27 @@
 						);
 					?>
 				</nav><!-- #site-navigation -->
-
+				
+				<div class="shop">
+				<?php 
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'shop-menu',
+							'container' 			=> false,
+							'menu_class'      => 'header__shop',
+							'fallback_cb'     => '',
+							'menu_id'         => '',
+							'depth'           => 0,
+						)
+					);
+					// echo wc_get_cart_url(); 
+				?>
+				<div class="shop__counter">
+					<?php 	global $woocommerce;
+					echo sprintf($woocommerce->cart->cart_contents_count);?>
+				</div>
+				</div>
+				
 				<div class="header__mobile">
 					<?php
 						wp_nav_menu(

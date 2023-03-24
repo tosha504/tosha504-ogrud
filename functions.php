@@ -51,6 +51,7 @@ function garden_setup() {
 		array(
 			'menu-header' => esc_html__( 'Header menu', 'garden' ),
 			'primary'     => esc_html__( 'Primary menu', 'garden' ),
+			'shop-menu'     => esc_html__( 'Shop menu', 'garden' ),
 		)
 	);
 
@@ -234,44 +235,24 @@ function register_post_types(){
 
 
 function show_archive_top() { 
-	
-	$q = get_queried_object();
-	$title = '';
-	if(isset($q->labels->name)){
-		$title = $q->labels->name ;
-	} else if(isset($q->post_title) ) {
-		$title = $q->post_title;
-	} else if ( is_home() && isset($q->post_title) ) {
-		$title = $q->post_title;
-	}else if (isset($q->post_type)) {
-
-		if( $q->post_type === 'post' ) {
-			$title = 'Blog';
-		} else if ( $q->post_type === 'knoweledge_base' ) {
-			$title = 'Baza wiedzy';
-		}
-	} else if(isset($q->name)) {
-		$title = $q->name;
-	}
 
 	$banner_page = get_field( 'banner_page', 'options' ); ?>
 	<div class="page-banner" <?php if( $banner_page ) { echo 'style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(' . wp_get_attachment_image_url( $banner_page, 'full' ) .'); "' ; }?>>
 		<div class="container">
 			<?php
-				echo  '<h1>' . $title . '</h1>';
 			if ( is_home() || is_tax( 'category-course' ) || is_page( 'wydarzenia' ) ) { ?>
 				<div class="choose">
-					<a class="course<?php echo is_tax( 'category-course' ) ? ' active' : ''; ?>" href="http://localhost:3000/type-of-course/education-cat/">
+					<a class="course<?php echo is_tax( 'category-course' ) ? ' active' : ''; ?>" href="<?php echo get_site_url(); ?>/type-of-course/education-cat/">
 						<p class="choose__number">01</p>
 						<p class="choose__title">Edukacja</p>
 						<span class="link-arrow-green"><?php _e( 'Read more', 'ogrud_botamiczny' ) ?></span>
 					</a>
-					<a href="http://localhost:3000/wydarzenia/" class="offer-events<?php echo is_page( 'wydarzenia' ) ? ' active' : ''; ?>">
+					<a href="<?php echo get_site_url(); ?>/wydarzenia/" class="offer-events<?php echo is_page( 'wydarzenia' ) ? ' active' : ''; ?>">
 					<p class="choose__number">02</p>
 					<p class="choose__title">Wydarzenia</p>
 					<span class="link-arrow-green"><?php _e( 'Read more', 'ogrud_botamiczny' ) ?></span>
 					</a>
-					<a class="offer-blog <?php echo is_home() ? ' active' : ''; ?>" href="http://localhost:3000/oferta/">
+					<a class="offer-blog <?php echo is_home() ? ' active' : ''; ?>" href="<?php echo get_site_url(); ?>/oferta/">
 					<p class="choose__number">03</p>
 						<p class="choose__title">Aktualnosci</p>
 						<span class="link-arrow-green"><?php _e( 'Read more', 'ogrud_botamiczny' ) ?></span>
@@ -289,3 +270,20 @@ function add_menu_link_class( $atts, $item, $args ) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
+function smartwp_remove_wp_block_library_css(){
+	wp_dequeue_style( 'wc-blocks-style' );
+	wp_dequeue_style( 'wp-block-library' );
+} 
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+
+function header_add_to_cart_fragment($fragments)
+{
+	global $woocommerce;
+	ob_start();
+	?>
+	<div class="shop__counter"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></div>
+	<?php
+	$fragments[".shop__counter"] = ob_get_clean();
+	return $fragments;
+}
+add_filter("woocommerce_add_to_cart_fragments", "header_add_to_cart_fragment");
