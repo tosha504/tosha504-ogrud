@@ -71,21 +71,13 @@
 				</nav><!-- #site-navigation -->
 				
 				<div class="shop">
-				<?php 
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'shop-menu',
-							'container' 			=> false,
-							'menu_class'      => 'header__shop',
-							'fallback_cb'     => '',
-							'menu_id'         => '',
-							'depth'           => 0,
-						)
-					);
-					// echo wc_get_cart_url(); 
-				?>
+					<a class="shopbagHeader" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'garden'); ?>">
+
+						<?php echo file_get_contents( (get_template_directory_uri() . '/assets/img/koszyk-sushi-hero.svg') ); ?>
+					
+				</a>
 				<div class="shop__counter">
-					<?php 	global $woocommerce;
+					<?php 	global $woocommerce; 
 					echo sprintf($woocommerce->cart->cart_contents_count);?>
 				</div>
 				</div>

@@ -1,0 +1,43 @@
+.page-template-contact {
+  .breadcrumbs-nav {
+    margin-top: 30px;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    &__left , &__right {
+      @media (min-width:$bp2) {
+        flex: 1 1 45%;
+      }
+      flex: 1 1 100%;
+      padding: 0 20px;
+      &_wrap {
+        margin-top: 50px;
+        div {
+          margin-bottom: 50px;
+          p {
+            &:not(:last-child) {
+              padding-bottom: 5px ;
+            }
+          }
+          a {
+            color: $primary;
+            font-weight: normal;
+            @media (min-width:$bp3) {
+              &:hover {
+                color: $themeYeelow;
+              }
+            }
+          }
+        }
+      }
+    }
+
+   
+
+    
+  }
+}

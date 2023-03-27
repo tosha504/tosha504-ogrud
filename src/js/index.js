@@ -29,12 +29,26 @@
 
   minus.on('click', function () {
     jQuery('body').removeClass('wcag_big');
+    setCookie('fontSizeWcag', false, 7);
   });
+  if (getCookie('fontSizeWcag') == 'true') {
+    jQuery('body').addClass('wcag_big');
+  }
   plus.on('click', function () {
     jQuery('body').addClass('wcag_big');
+    setCookie('fontSizeWcag', true, 7);
   });
+  if (getCookie('wcagContrast') == 'true') {
+    jQuery('body').addClass('wcag_contrast');
+  }
   contrast.on('click', function () {
-    jQuery('body').toggleClass('wcag_contrast');
+    if (getCookie('wcagContrast') == 'true') {
+      setCookie('wcagContrast', false, 7);
+      jQuery('body').removeClass('wcag_contrast');
+    } else {
+      jQuery('body').addClass('wcag_contrast');
+      setCookie('wcagContrast', true, 7);
+    }
   });
   var simplepicker = new SimplePicker({
     zIndex: 10
@@ -47,6 +61,12 @@
     checkValueCustomSearch();
   });
   jQuery('.custom-search__items li').on('click', function (e) {
+    if (jQuery(window).width() < 576) {
+      var target = jQuery('#content');
+      jQuery("html, body").animate({
+        scrollTop: jQuery(target).offset().top
+      }, 1000);
+    }
     if (jQuery(e.target).siblings().hasClass('active')) {
       jQuery(e.target).siblings().removeClass('active');
     }
@@ -83,4 +103,35 @@
       }
     });
   }
+
+  // setTimeout(function(){
+  if (getCookie('popupCookie') != 'submited') {
+    jQuery('.cookies').css("display", "block").hide().fadeIn(2000);
+  }
+  jQuery('a.submit').click(function () {
+    jQuery('.cookies').fadeOut();
+    //sets the coookie to five minutes if the popup is submited (whole numbers = days)
+    setCookie('popupCookie', 'submited', 7);
+  });
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  // }, 5000);
 })(jQuery);

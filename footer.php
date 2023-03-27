@@ -102,7 +102,7 @@ echo ! is_front_page() ? map_creating($map)  : '';?>
 			<div class="item__content content">
 				<div class="content__left">
 				<h6 class="content__menu_title footer__title"><?php echo $block_title; ?></h6>	
-				<!-- <ul class="content__menu_items">
+				<ul class="content__menu_items">
 					<?php 
 						foreach ($block_links as $key => $link_block) {
 						$link_url = $link_block['link']['url'];
@@ -112,18 +112,8 @@ echo ! is_front_page() ? map_creating($map)  : '';?>
 							<a class="footer_link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 						</li>
 					<?php } ?>
-				</ul> -->
-				<?php
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'primary',
-								'container' 			=> false,
-								'fallback_cb'     => '',
-								'menu_class'			=> 'content__menu_items',
-								'link_class'  		=> 'footer_link'
-							)
-						);
-					?>
+				</ul>
+				
 				</div>
 				<div class="content__right new">
 					<div class="news">
@@ -141,6 +131,13 @@ echo ! is_front_page() ? map_creating($map)  : '';?>
 		</div>
 		
 	</footer><!-- #colophon -->
+	
+	<div class="cookies">
+		<div class="cookies__flex">
+			<p>Używamy plików cookie, aby poprawić komfort korzystania z naszej witryny. Przeglądając tę stronę, zgadzasz się na używanie przez nas plików cookie.</p>	
+			<a href="javascript:;"  class="cookies__btn btn submit">Akceptuję</a>
+		</div>
+	</div><!-- cookies -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

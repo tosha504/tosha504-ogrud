@@ -314,7 +314,7 @@
       position: absolute;
       top: -10px;
       right: -20px;
-      font-size: 13px;
+      font-size: 13px !important;
       width: 20px;
       height: 20px;
       justify-content: center;
@@ -332,13 +332,13 @@
       width: 24px;
       height: 27px;
       position: relative;
-      a {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        bottom: 0;
-        background: url(../assets/img/koszyk-sushi-hero.svg) no-repeat center/cover;
-      }
+      // a {
+      //   position: absolute;
+      //   width: 100%;
+      //   top: 0;
+      //   bottom: 0;
+      //   background: url(../assets/img/koszyk-sushi-hero.svg) no-repeat center/cover;
+      // }
     }
   }
 } 
