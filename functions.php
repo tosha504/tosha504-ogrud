@@ -213,6 +213,13 @@ function create_knoweledge_base_taxonomy() {
 		'show_ui'       	=> true,
 	));
 
+	register_taxonomy('garden_categories', 'garden_departments', array(
+		'hierarchical'  	=> true,
+		'label' 					=> 'Kategorie',
+		'show_in_rest' 		=> true,
+		'show_ui'       	=> true,
+	));
+
 }
 
 add_action( 'init', 'create_knoweledge_base_taxonomy' );
@@ -239,7 +246,7 @@ function register_post_types(){
 		'hierarchical'        => true,
 		'has_archive'         => false,
 		'menu_icon'           => 'dashicons-database',
-		'taxonomies' => 			array('post_tag'),
+		'taxonomies' => 			array('garden_categories' , 'post_tag'),
 	] );
 
 }
