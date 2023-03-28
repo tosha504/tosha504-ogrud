@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-01-12 13:02+0000\n"
-"PO-Revision-Date: 2023-01-12 13:03+0000\n"
+"PO-Revision-Date: 2023-03-28 09:15+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
 "Language: pl_PL\n"
@@ -38,7 +38,6 @@ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 #. %s: Name of current post. Only visible to screen readers
 #: template-parts/content.php:40
@@ -116,7 +115,7 @@ msgstr ""
 
 #: functions.php:178 functions.php:179
 msgid "Options page"
-msgstr "bv"
+msgstr ""
 
 #: template-parts/content-page.php:25 template-parts/content.php:53
 msgid "Pages:"

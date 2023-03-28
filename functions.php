@@ -263,17 +263,17 @@ function show_archive_top() {
 					<a class="course<?php echo is_tax( 'category-course' ) ? ' active' : ''; ?>" href="<?php echo get_site_url(); ?>/type-of-course/education-cat/">
 						<p class="choose__number">01</p>
 						<p class="choose__title">Edukacja</p>
-						<span class="link-arrow-green"><?php _e( 'Read more', 'ogrud_botamiczny' ) ?></span>
+						<span class="link-arrow-green"><?php _e( 'Read more', 'garden' ) ?></span>
 					</a>
 					<a href="<?php echo get_site_url(); ?>/wydarzenia/" class="offer-events<?php echo is_page( 'wydarzenia' ) ? ' active' : ''; ?>">
 					<p class="choose__number">02</p>
 					<p class="choose__title">Wydarzenia</p>
-					<span class="link-arrow-green"><?php _e( 'Read more', 'ogrud_botamiczny' ) ?></span>
+					<span class="link-arrow-green"><?php _e( 'Read more', 'garden' ) ?></span>
 					</a>
 					<a class="offer-blog <?php echo is_home() ? ' active' : ''; ?>" href="<?php echo get_site_url(); ?>/oferta/">
 					<p class="choose__number">03</p>
 						<p class="choose__title">Aktualnosci</p>
-						<span class="link-arrow-green"><?php _e( 'Read more', 'ogrud_botamiczny' ) ?></span>
+						<span class="link-arrow-green"><?php _e( 'Read more', 'garden' ) ?></span>
 					</a>
 				</div>
 			<?php } ?>	

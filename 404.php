@@ -14,7 +14,7 @@ get_header();
 		<section class="error">
 			<div class="container">
 				<div class="error_content">
-					<h1 class="error_content-title"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ogrud_botamiczny' ); ?></h1>
+					<h1 class="error_content-title"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'garden' ); ?></h1>
 					<div class="e404">
 						<a href="<?php echo esc_url( home_url( '/' ) ) ?>">
 							404

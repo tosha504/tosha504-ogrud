@@ -47,7 +47,7 @@ get_header(); ?>
 					}
 				}
 				else {
-					_e('Oops. Nothing found!', 'ogrud_botamiczny');
+					_e('Oops. Nothing found!', 'garden');
 				}
 				wp_reset_postdata();
 			?>

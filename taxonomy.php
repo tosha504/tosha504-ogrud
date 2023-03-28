@@ -79,7 +79,7 @@ get_header();
             <p>' . esc_html( $term_child->name ) . '</p>
             </div>
             <div class="knowledge__item_arrow">
-              <span class="link-arrow-green">' . __( 'Read more', 'ogrud_botamiczny' ) . '</span>
+              <span class="link-arrow-green">' . __( 'Read more', 'garden' ) . '</span>
             </div>
           </a>';
           } 
@@ -103,7 +103,7 @@ get_header();
                       <?php if($term_child->name){ ?><h4><?php echo esc_html( $term_child->name ) ?></h4><?php } ?>
                     </div>
                     <div class="card__content_bottom">
-                    <span class="link-arrow"><?php _e( 'Read more', 'ogrud_botamiczny' ); ?></span>
+                    <span class="link-arrow"><?php _e( 'Read more', 'garden' ); ?></span>
                     </div>
                 </div>
               </a>

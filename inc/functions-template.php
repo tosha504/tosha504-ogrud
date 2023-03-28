@@ -119,7 +119,7 @@ function create_blog_card( $blog_post_ID, $blog_post_title, $blog_post_excerpt, 
       '</div>';
       echo '<h6 class="card__body_title">' . $titleCount . '</h6>';
       echo $excerptCount ? '<p class="card__body_excerpt">' . $excerptCount . '</p>' : '';
-      echo '<span class="link-arrow-green">' . __( 'Read more', 'ogrud_botamiczny' ) . '</span>';
+      echo '<span class="link-arrow-green">' . __( 'Read more', 'garden' ) . '</span>';
     echo '</div>';
   echo '</a></article>';
 
@@ -145,27 +145,27 @@ function single_page_render( $duration = null, $limit = null, $available = null,
           <ul class="fields">
             <?php if( $duration ) { ?>
             <li>
-              <p><?php _e( 'Digestion time:', 'ogrud_botamiczny' ) ?></p>
+              <p><?php _e( 'Digestion time:', 'garden' ) ?></p>
               <p class="fields__border"><?php echo $duration;?></li><?php } ?></p>
             </li>
             <?php if( $limit ) { ?>
             <li>
-                <p><?php _e( 'Seat limit:', 'ogrud_botamiczny' ) ?></p>
+                <p><?php _e( 'Seat limit:', 'garden' ) ?></p>
                 <p class="fields__border"><?php echo $limit;?></li><?php } ?></p>
             </li>
             <?php if( $available ) { ?>
             <li>
-                <p><?php _e( 'Activities available:', 'ogrud_botamiczny' ) ?></p>
+                <p><?php _e( 'Activities available:', 'garden' ) ?></p>
                 <p class="fields__border"><?php echo $available;?></li><?php } ?></p>
             </li>
             <?php if( $cost ) { ?>
             <li>
-                <p><?php _e( 'Cost:', 'ogrud_botamiczny' ) ?></p>
+                <p><?php _e( 'Cost:', 'garden' ) ?></p>
                 <p class="fields__border"><?php echo $cost;?></li><?php } ?></p>
             </li>
             <?php if( $age ) { ?>
             <li>
-                <p><?php _e( 'Age:', 'ogrud_botamiczny' ) ?></p>
+                <p><?php _e( 'Age:', 'garden' ) ?></p>
                 <p class="fields__border"><?php echo $age;?></li><?php } ?></p>
             </li>
           </ul>
@@ -193,9 +193,9 @@ function single_page_render( $duration = null, $limit = null, $available = null,
         '</a>
       </div>';
       if ( $recipe ) echo '<div class="content__recipe">
-        <span class="recipe-title">' . __( 'Recipe:', 'ogrud_botamiczny' ) . '</span>' .  $recipe ;
+        <span class="recipe-title">' . __( 'Recipe:', 'garden' ) . '</span>' .  $recipe ;
       if ( $download ) {
-        echo '<div class="content__download"><span class="recipe-title">' . __( 'Download:', 'ogrud_botamiczny' ) . '</span>';
+        echo '<div class="content__download"><span class="recipe-title">' . __( 'Download:', 'garden' ) . '</span>';
         foreach ($download as $link_download) {
         $link_url = $link_download['button']['url'];
         $link_title = $link_download['button']['title'];
@@ -209,13 +209,13 @@ function single_page_render( $duration = null, $limit = null, $available = null,
      
       echo '<div class="content__text">';
         the_content();
-        if ( $preparation ) echo '<div class="content__text_preparation"><span class="recipe-title">' . __( 'Preparation:', 'ogrud_botamiczny' ) . '</span><p>' . $preparation . '</p></div>';
+        if ( $preparation ) echo '<div class="content__text_preparation"><span class="recipe-title">' . __( 'Preparation:', 'garden' ) . '</span><p>' . $preparation . '</p></div>';
       echo '</div>';
     echo '</div>';
   echo '</div></div>';
   if( $contact_form ) { ?>
     <div class="container">
-      <h3 class="title-form"><?php _e( 'Booking', 'ogrud_botamiczny' ) ?></h3>
+      <h3 class="title-form"><?php _e( 'Booking', 'garden' ) ?></h3>
       <?php  echo do_shortcode( $contact_form ); ?>
     </div>
   <?php }  
