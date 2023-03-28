@@ -86,6 +86,7 @@ get_header();
         echo '</section>'; }
       else if( !empty($term_childs) && get_post_type() == 'course' ){
         ?>
+        
         <section class="for-whom">
           <ul class="for-whom__cards">
             <?php

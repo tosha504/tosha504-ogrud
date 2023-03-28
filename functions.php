@@ -139,7 +139,7 @@ add_action( 'widgets_init', 'garden_widgets_init' );
 /**
  * Disable Gutenberg
  */
-add_filter('use_block_editor_for_post', '__return_false');
+// add_filter('use_block_editor_for_post', '__return_false');
 
 // Theme includes directory.
 $realestate_inc_dir = 'inc';
@@ -288,11 +288,7 @@ function add_menu_link_class( $atts, $item, $args ) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
-function smartwp_remove_wp_block_library_css(){
-	wp_dequeue_style( 'wc-blocks-style' );
-	wp_dequeue_style( 'wp-block-library' );
-} 
-add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+
 
 function header_add_to_cart_fragment($fragments)
 {
