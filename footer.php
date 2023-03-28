@@ -126,7 +126,7 @@ echo ! is_front_page() ? map_creating($map)  : '';?>
 			</div>
 			</div>
 		<p class="privacy">
-		Ogród Botaniczny UW © 2023 | wykonanie <a href="https://thenewlook.pl/" target="_blank" rel="noopener noreferrer">Thenewlook</a> 
+		Ogród Botaniczny UW © 2023 | wykonanie <a href="https://thenewlook.pl/" target="_blank" rel="noopener noreferrer">THENEWLOOK</a> 
 		</p>
 		</div>
 		

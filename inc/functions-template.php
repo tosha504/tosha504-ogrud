@@ -101,7 +101,7 @@ function newsletter_creating($bag_image, $settings_bg) {
 
 function create_blog_card( $blog_post_ID, $blog_post_title, $blog_post_excerpt, $term_cat = null) {
   
-  $image =  get_the_post_thumbnail($blog_post_ID) ?  get_the_post_thumbnail($blog_post_ID, 'medium') : '<img src="' .  get_template_directory_uri() . '/assets/img/tlo-green-ogrod-botaniczny-uw.svg">';
+  $image =  get_the_post_thumbnail($blog_post_ID) ?  get_the_post_thumbnail($blog_post_ID, 'full') : '<img src="' .  get_template_directory_uri() . '/assets/img/tlo-green-ogrod-botaniczny-uw.svg">';
   $trimWordsTitle = 5;
   $titleCount = wp_trim_words( $blog_post_title, $trimWordsTitle, ' ...' );
   $trimWordsExcerpt = 15;
