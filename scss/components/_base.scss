@@ -39,7 +39,7 @@ html,body{
   }
 
   &.wcag_contrast {
-    div,section, input, textarea {
+    div,section, input, textarea,ul {
       svg {
         fill : rgb(255, 217, 0) !important;
         .st0 {
