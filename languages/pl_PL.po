@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-01-12 13:02+0000\n"
-"PO-Revision-Date: 2023-03-28 09:15+0000\n"
+"PO-Revision-Date: 2023-03-28 09:29+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
 "Language: pl_PL\n"
@@ -23,9 +23,21 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: functions.php:127
+#: inc/functions-template.php:158
+msgid "Activities available:"
+msgstr ""
+
+#: functions.php:129
 msgid "Add widgets here."
 msgstr ""
+
+#: inc/functions-template.php:168
+msgid "Age:"
+msgstr "Wiek:"
+
+#: inc/functions-template.php:218
+msgid "Booking"
+msgstr "Rezerwacja"
 
 #: comments.php:68
 msgid "Comments are closed."
@@ -38,19 +50,47 @@ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
-#. %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:40
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+#. Name of the template
+msgid "Contact"
 msgstr ""
+
+#: inc/functions-template.php:163
+msgid "Cost:"
+msgstr "Koszt:"
 
 #. Description of the theme
 msgid "Description"
 msgstr ""
 
+#: inc/functions-template.php:148
+msgid "Digestion time:"
+msgstr "Czas trwania:"
+
+#. Name of the template
+msgid "Donors"
+msgstr ""
+
+#: inc/functions-template.php:198
+msgid "Download:"
+msgstr "Pobierz:"
+
 #. %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:100 template-parts/content-page.php:39
+#: inc/template-tags.php:100 template-parts/content-page.php:38
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. Name of the template
+msgid "Example-page"
+msgstr ""
+
+#. Name of the template
+msgid "Front page"
+msgstr ""
+
+#: functions.php:52
+msgid "Header menu"
 msgstr ""
 
 #. URI of the theme
@@ -61,11 +101,7 @@ msgstr ""
 msgid "https://thenewlook.pl"
 msgstr ""
 
-#: footer.php:16
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: 404.php:21
+#: 404.php:17
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -88,12 +124,8 @@ msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: 404.php:30
-msgid "Most Used Categories"
-msgstr ""
-
-#: single.php:24
-msgid "Next:"
+#. Name of the template
+msgid "My page"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -109,15 +141,11 @@ msgstr ""
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: 404.php:17
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+#: search-custom.php:50
+msgid "Oops. Nothing found!"
+msgstr "Ups. Nic nie znaleziono!"
 
-#: functions.php:178 functions.php:179
-msgid "Options page"
-msgstr ""
-
-#: template-parts/content-page.php:25 template-parts/content.php:53
+#: template-parts/content-page.php:24
 msgid "Pages:"
 msgstr ""
 
@@ -138,17 +166,17 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#: single.php:23
-msgid "Previous:"
+#: inc/functions-template.php:212
+msgid "Preparation:"
+msgstr "Przygotowanie:"
+
+#: functions.php:53
+msgid "Primary menu"
 msgstr ""
 
-#: functions.php:52
-msgid "Primary"
-msgstr ""
-
-#. %s: CMS name, i.e. WordPress.
-#: footer.php:19
-msgid "Proudly powered by %s"
+#: functions.php:266 functions.php:271 functions.php:276 taxonomy.php:82
+#: taxonomy.php:106 inc/functions-template.php:122
+msgid "Read more"
 msgstr ""
 
 #. 1: link to WP admin new post page.
@@ -157,12 +185,28 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
+#: inc/functions-template.php:196
+msgid "Recipe:"
+msgstr "Przepis:"
+
+#. Name of the template
+msgid "Search Page"
+msgstr ""
+
 #. %s: search query.
 #: search.php:21
 msgid "Search Results for: %s"
 msgstr ""
 
-#: functions.php:125
+#: inc/functions-template.php:153
+msgid "Seat limit:"
+msgstr "Limit miejsc:"
+
+#: functions.php:54
+msgid "Shop menu"
+msgstr ""
+
+#: functions.php:127
 msgid "Sidebar"
 msgstr ""
 
@@ -181,12 +225,6 @@ msgstr ""
 msgid "THE NEW LOOK"
 msgstr ""
 
-#. 1: Theme name, 2: Theme author.
-#: footer.php:25
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#. %1$s: smiley
-#: 404.php:48
-msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+#: header.php:74
+msgid "View your shopping cart"
+msgstr "Zobacz swój koszyk"

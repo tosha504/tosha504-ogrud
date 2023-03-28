@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-28 09:25+0000\n"
+"POT-Creation-Date: 2023-03-28 09:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
@@ -22,20 +22,8 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/functions-template.php:158
-msgid "Activities available:"
-msgstr ""
-
 #: functions.php:129
 msgid "Add widgets here."
-msgstr ""
-
-#: inc/functions-template.php:168
-msgid "Age:"
-msgstr ""
-
-#: inc/functions-template.php:218
-msgid "Booking"
 msgstr ""
 
 #: comments.php:68
@@ -54,24 +42,12 @@ msgstr[1] ""
 msgid "Contact"
 msgstr ""
 
-#: inc/functions-template.php:163
-msgid "Cost:"
-msgstr ""
-
 #. Description of the theme
 msgid "Description"
 msgstr ""
 
-#: inc/functions-template.php:148
-msgid "Digestion time:"
-msgstr ""
-
 #. Name of the template
 msgid "Donors"
-msgstr ""
-
-#: inc/functions-template.php:198
-msgid "Download:"
 msgstr ""
 
 #. %s: Name of current post. Only visible to screen readers
@@ -97,12 +73,6 @@ msgstr ""
 
 #. Author URI of the theme
 msgid "https://thenewlook.pl"
-msgstr ""
-
-#: 404.php:17
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
 msgstr ""
 
 #: template-parts/content-none.php:44
@@ -139,10 +109,6 @@ msgstr ""
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: search-custom.php:50
-msgid "Oops. Nothing found!"
-msgstr ""
-
 #: template-parts/content-page.php:24
 msgid "Pages:"
 msgstr ""
@@ -164,27 +130,14 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/functions-template.php:212
-msgid "Preparation:"
-msgstr ""
-
 #: functions.php:53
 msgid "Primary menu"
-msgstr ""
-
-#: functions.php:266 functions.php:271 functions.php:276 taxonomy.php:82
-#: taxonomy.php:106 inc/functions-template.php:122
-msgid "Read more"
 msgstr ""
 
 #. 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: inc/functions-template.php:196
-msgid "Recipe:"
 msgstr ""
 
 #. Name of the template
@@ -194,10 +147,6 @@ msgstr ""
 #. %s: search query.
 #: search.php:21
 msgid "Search Results for: %s"
-msgstr ""
-
-#: inc/functions-template.php:153
-msgid "Seat limit:"
 msgstr ""
 
 #: functions.php:54
