@@ -1,0 +1,126 @@
+nav {
+  @media (max-width:$bp4) {
+    padding: 50px;
+    background-color: $white;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    flex-direction: column;
+    overflow: auto;
+    transition: all .5s;
+    
+    &.active {
+      display: flex;
+      width: 80%;
+      left: 0;
+      a {
+        color: $font;
+      }
+    }
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  
+    @media (min-width:$bp4) { 
+      flex-direction: row;
+      margin-right: 20px;
+    }
+
+    &.sub-menu {
+      display: none;
+      padding: 5px 0;
+      li {
+        padding: 5px 0;
+        a {
+          white-space: nowrap;
+        }
+      }
+      @media (min-width:$bp4) {
+        background-color: $white;
+        display: block;
+        position: absolute;
+        padding: 5px 10px;
+        z-index: 9999;
+        left: -20px;
+        top: 40px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.35s;
+      }
+    }
+    li {
+      @media (min-width:$bp4) { 
+        position: relative;
+        &:hover {
+          ul {
+            &.sub-menu {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+      a {
+        color: $font;
+        font-size: 18px;
+        font-weight: 300;
+        @media (min-width:$bp4) {
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+   .menu-item-has-children {
+     a {
+      &:not(:last-child) {
+        position: relative;
+        transition: rotate 0.45s;
+        @media (min-width: $bp4) {
+          &:hover {
+            color: $primary;
+            cursor: pointer;
+            &::after {
+              transform: rotate(180deg);
+            }
+            ul {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        @media (max-width: $bp4) {
+          &.active {
+            &::after {
+              transform: rotate(180deg);
+            }
+          } 
+        }
+        &::after {
+          content: "";
+          width: 15px;
+          height: 15px;
+          background-image: url(../assets/img/chevron-up.svg);
+          background-size: 17px 17px;
+          vertical-align: middle;
+          margin-left: 3px;
+          background-repeat: no-repeat;
+          background-position: center;
+          display: inline-block;
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          position: relative;
+        }
+        
+      }
+
+     }
+    }
+}

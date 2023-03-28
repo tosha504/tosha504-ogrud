@@ -69,9 +69,7 @@ get_header();
 
         echo '</section>';
       }
-  
-      // var_dump($current_term_ID);
-      // var_dump(get_post_type());
+
       if (!empty($term_childs) && get_post_type() == 'knoweledge_base') { 
         echo '<section class="knowledge">';
           foreach ( $term_childs as $child  ) {

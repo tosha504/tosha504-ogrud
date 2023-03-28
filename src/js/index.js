@@ -2,7 +2,7 @@
   console.log("ready!");
   var burger = jQuery('.header__burger span'),
     body = jQuery('body'),
-    nav = jQuery('.header__menu_mob'),
+    nav = jQuery('.header__nav'),
     minus = jQuery('.header__wcag_minus'),
     plus = jQuery('.header__wcag_plus'),
     contrast = jQuery('.header__wcag_contrast'),
@@ -12,21 +12,36 @@
     nav.toggleClass('active');
     body.toggleClass('fixed-page');
   });
-
-  // jQuery( '.menu-item-has-children a' ).on( 'click' , function (e) {
-  //   jQuery( e.target ).siblings( 'ul .sub-menu' ).slideToggle( 700 );
-  //   if ( jQuery( e.target ).parent().children().siblings( 'ul .sub-menu' ).css( 'display')  == 'block' ) {
-  //       jQuery( e.target ).parent().siblings().children( 'ul .sub-menu' ).slideUp ( 700 )
-  //       jQuery( e.target ).parent().siblings().children( 'a' ).removeClass( 'active' )
-  //   }
-
-  //   if( !jQuery( e.target ).hasClass( 'active' ) ) {
-  //     jQuery( e.target ).addClass( 'active' )
-  //   } else {
-  //     jQuery( e.target ).removeClass( 'active' )
-  //   }
-  // })
-
+  function mobNavMenu() {
+    jQuery('.menu-item-has-children').on('click', function (e) {
+      jQuery(e.target).siblings('ul .sub-menu').slideToggle(700);
+      if (jQuery(e.target).parent().children().siblings('ul .sub-menu').css('display') == 'block') {
+        jQuery(e.target).parent().siblings().children('ul .sub-menu').slideUp(700);
+        jQuery(e.target).parent().siblings().children('a').removeClass('active');
+      }
+      if (!jQuery(e.target).hasClass('active')) {
+        jQuery(e.target).addClass('active');
+      } else {
+        jQuery(e.target).removeClass('active');
+      }
+    });
+  }
+  function debounce(func, delay) {
+    var timer;
+    return function () {
+      clearTimeout(timer);
+      timer = setTimeout(func, delay);
+    };
+  }
+  if (jQuery(window).width() < 1200) {
+    mobNavMenu();
+  }
+  jQuery(window).on('resize', debounce(function () {
+    if (jQuery(window).width() < 1200) {
+      console.log('Window resize has ended!');
+      mobNavMenu();
+    }
+  }, 250));
   minus.on('click', function () {
     jQuery('body').removeClass('wcag_big');
     setCookie('fontSizeWcag', false, 7);

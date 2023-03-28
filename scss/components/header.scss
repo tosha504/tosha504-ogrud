@@ -1,7 +1,7 @@
 .header {
   position: relative;
 
-  &__top_container, &__bottom_container, &__nav_menu, &__top_socials {
+  &__top_container, &__bottom_container, &__top_socials {
     display: flex;
     align-items: center;
   }
@@ -62,58 +62,7 @@
     }
   }
 
-  &__nav {
-    display: none;
-    @media (min-width:$bp4) {
-      display: block;
-    }
-    li {
-      margin-right: 20px;
-      &:hover {
-        .nav-link {
-          color: $primary;
-        }
-      }
-      a {
-        color: $font;
-        font-size: 18px;
-        font-weight: 300;
-        
-      }
-    }
-  }
-
-  //mega-menu 
-  .is-megamenu {
-    transition: rotate 0.45s;
-    &::after {
-      content: "";
-      width: 15px;
-      height: 15px;
-      background-image: url(../assets/img/chevron-up.svg);
-      background-size: 17px 17px;
-      vertical-align: middle;
-      margin-left: 3px;
-      background-repeat: no-repeat;
-      background-position: center;
-      display: inline-block;
-      -webkit-transition: .3s ease-in-out;
-      transition: .3s ease-in-out;
-      position: relative;
-      
-    }
-    &:hover {
-      &::after {
-        cursor: pointer;
-        filter: invert(37%) sepia(77%) saturate(451%) hue-rotate(87deg) brightness(92%) contrast(97%);
-        transform: rotate(180deg);
-      }
-      .header__mega {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-  }
+ 
 
   &__wcag {
     display: flex;
@@ -121,10 +70,8 @@
     padding-left: 20px;
     border-left: 1px solid #000;
     @media (max-width: $bp4) {
-      // border-right: 1px solid #000;
       border-left:none;
       padding-left: 0px;
-      // padding-right: 20px;
     }
 
     li {
@@ -146,163 +93,47 @@
     margin-left: 20px;
 
     span {
-        background-color: $font;
-        height: 3px;
-        width: 40px;
+      background-color: $font;
+      height: 3px;
+      width: 40px;
+      position: absolute;
+      transition: 0.4s;
+
+      &:before, &:after{
+          background-color: $font;
+          width: 40px;
+          left: 0;
+      }
+  
+      &:before {
         position: absolute;
+        top: 8px;
+        content: "";
+        height: 3px;
         transition: 0.4s;
 
-        &:before, &:after{
-            background-color: $font;
-            width: 40px;
-            left: 0;
-        }
-    
+      }
+      &:after {
+        position: absolute;
+        bottom: 8px;
+        content: "";
+        height: 3px;
+      }
+  
+      &.active {
+        transform: rotate(-45deg);
         &:before {
-          position: absolute;
-          top: 8px;
-          content: "";
-          height: 3px;
-          transition: 0.4s;
-
+          transform: rotate(90deg);
+          top: 0;
         }
-        &:after {
-          position: absolute;
-          bottom: 8px;
-          content: "";
-          height: 3px;
+        &::after {
+          opacity: 0;
         }
-    
-        &.active {
-          transform: rotate(-45deg);
-          &:before {
-            transform: rotate(90deg);
-            top: 0;
-          }
-          &::after {
-            opacity: 0;
-          }
-        }
+      }
     }
 
     @media (max-width: $bp4) {
         display: block;
-    }
-  }
-
-  //nav-mob
-  &__menu_mob {
-    display: none;
-    @media (max-width: $bp4) {  
-      display: block;
-      padding: 50px;
-      background-color: $white;
-      position: fixed;
-      left: -100%;
-      top: 0;
-      bottom: 0;
-      z-index: 1000;
-      align-items: start;
-      flex-direction: column;
-      overflow: auto;
-      transition: all .5s;
-      
-      
-      &.active {
-        display: flex;
-        width: 80%;
-        left: 0;
-        a {
-          color: $font;
-        }
-      }
-  
-  
-      li {
-        margin: 10px 0;
-        &:not(:last-child) {
-          @media (min-width:$bp4) {
-              margin-right: 20px;
-          }
-          @media (min-width:$bp5) {
-              margin-right: 35px;
-          }
-        }
-      }
-
-      a {
-        white-space: nowrap;
-        color: $white;
-        font-size: 18px;
-        font-weight: 600;
-        @media (min-width:$bp4) {
-          &:hover {
-              color: $primary;
-          }
-        }
-      }
-      
-      &_links {
-        position: absolute;
-        bottom: 50px;
-        left: 50px;
-      }
-    }
-  }
-
-
-  .menu-item-has-children {
-    position: relative;
-    transition: rotate 0.45s;
-    @media (min-width: $bp3) {
-      &:hover {
-        color: $primary;
-        cursor: pointer;
-        &::after {
-          transform: rotate(180deg);
-        }
-        ul {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-    }
-    &::after {
-      content: "";
-      width: 15px;
-      height: 15px;
-      background-image: url(../assets/img/chevron-up.svg);
-      background-size: 17px 17px;
-      vertical-align: middle;
-      margin-left: 3px;
-      background-repeat: no-repeat;
-      background-position: center;
-      display: inline-block;
-      -webkit-transition: .3s ease-in-out;
-      transition: .3s ease-in-out;
-      position: relative;
-      
-    }
-    ul {
-      background-color: $white;
-      position: absolute;
-      z-index: 9999;
-      padding: 5px 10px;
-      left: -20px;
-      top: 40px;
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.35s;
-      li {
-        padding: 5px 0;
-        a {
-          white-space: nowrap;
-          &:hover {
-            color: $primary;
-          }
-        }
-      }
-      // display: none;
     }
   }
 
@@ -332,13 +163,6 @@
       width: 24px;
       height: 27px;
       position: relative;
-      // a {
-      //   position: absolute;
-      //   width: 100%;
-      //   top: 0;
-      //   bottom: 0;
-      //   background: url(../assets/img/koszyk-sushi-hero.svg) no-repeat center/cover;
-      // }
     }
   }
 } 

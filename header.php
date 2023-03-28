@@ -81,18 +81,6 @@
 					echo sprintf($woocommerce->cart->cart_contents_count);?>
 				</div>
 				</div>
-				
-				<div class="header__mobile">
-					<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-header',
-								'container'			 => false,
-								'menu_class'     => 'header__menu_mob',
-							)
-						);
-					?>
-				</div>
 
 				<ul class="header__wcag">
 					<li class="header__wcag_minus">

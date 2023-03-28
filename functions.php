@@ -231,6 +231,17 @@ function register_post_types(){
 		'taxonomies' => 			array('categories', 'post_tag'),
 	] );
 
+	register_post_type( 'garden_departments', [
+		'label' 							=> 'Działy Ogrodu',
+		'public'              => true,
+		'supports'            => [ 'title', 'editor', 'custom-fields', 'thumbnail'], 
+		'show_in_menu'        => true, 
+		'hierarchical'        => true,
+		'has_archive'         => false,
+		'menu_icon'           => 'dashicons-database',
+		'taxonomies' => 			array('post_tag'),
+	] );
+
 }
 
 
