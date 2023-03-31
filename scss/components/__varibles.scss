@@ -29,11 +29,11 @@ $bp5: 1440px + 1;
 }
 
 .btn {
-    background-color: $primary;
+    background-color: $primary !important;
     font-size: 12px;
     font-weight: 300;
     max-width: 151px;
-    border-radius: 21px;
+    border-radius: 21px !important;
     padding: 10px 20px;
     // color: $white !important;
     &:hover {
