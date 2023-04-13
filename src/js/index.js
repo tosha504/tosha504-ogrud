@@ -1,5 +1,4 @@
 (function () {
-  console.log("ready!");
   var burger = jQuery('.header__burger span'),
     body = jQuery('body'),
     nav = jQuery('.header__nav'),
@@ -38,7 +37,6 @@
   }
   jQuery(window).on('resize', debounce(function () {
     if (jQuery(window).width() < 1200) {
-      console.log('Window resize has ended!');
       mobNavMenu();
     }
   }, 250));
@@ -89,8 +87,6 @@
     checkValueCustomSearch();
   });
   function checkValueCustomSearch() {
-    //   console.log(jQuery('.custom-search__items li.active').data('slug'),
-    // simplepicker.readableDate);
     //AJAX
     jQuery.ajax({
       type: 'post',
@@ -107,7 +103,6 @@
         jQuery('.custom-search__items li').addClass('disabled');
       },
       success: function success(response) {
-        // console.log(response);
         jQuery('.box').removeClass('active');
         jQuery('.section-blog__cards').html(response).show();
         jQuery('.custom-search__items li').removeClass('disabled');
@@ -118,16 +113,16 @@
       }
     });
   }
-
-  // setTimeout(function(){
-  if (getCookie('popupCookie') != 'submited') {
-    jQuery('.cookies').css("display", "block").hide().fadeIn(2000);
-  }
-  jQuery('a.submit').click(function () {
-    jQuery('.cookies').fadeOut();
-    //sets the coookie to five minutes if the popup is submited (whole numbers = days)
-    setCookie('popupCookie', 'submited', 7);
-  });
+  setTimeout(function () {
+    if (getCookie('popupCookie') != 'submited') {
+      jQuery('.cookies').css("display", "block").hide().fadeIn(2000);
+    }
+    jQuery('a.submit').click(function () {
+      jQuery('.cookies').fadeOut();
+      //sets the coookie to five minutes if the popup is submited (whole numbers = days)
+      setCookie('popupCookie', 'submited', 7);
+    });
+  }, 5000);
   function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -148,5 +143,4 @@
     var expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
-  // }, 5000);
 })(jQuery);

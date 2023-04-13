@@ -1,5 +1,8 @@
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background: $white;
 
   &__top_container, &__bottom_container, &__top_socials {
     display: flex;

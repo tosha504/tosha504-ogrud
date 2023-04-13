@@ -1,5 +1,4 @@
 ( function () {
-    console.log( "ready!" );
     const burger = jQuery( '.header__burger span' ),
     body = jQuery( 'body' ),
     nav = jQuery( '.header__nav' ),
@@ -43,7 +42,6 @@
     
     jQuery(window).on('resize', debounce(function() {
       if(jQuery(window).width() < 1200) {
-        console.log('Window resize has ended!');
         mobNavMenu();
       }
     }, 250));
@@ -103,8 +101,6 @@
     })
 
   function checkValueCustomSearch() {
-  //   console.log(jQuery('.custom-search__items li.active').data('slug'),
-  // simplepicker.readableDate);
     //AJAX
     jQuery.ajax({
       type: 'post',
@@ -121,7 +117,6 @@
         jQuery('.custom-search__items li').addClass('disabled') 
       },
       success: function(response) {
-        // console.log(response);
         jQuery('.box').removeClass('active')
         jQuery('.section-blog__cards').html(response).show();
         jQuery('.custom-search__items li').removeClass('disabled') 
@@ -134,38 +129,39 @@
     });
   }
 
-  // setTimeout(function(){
-  if( getCookie('popupCookie') != 'submited'){ 
-    jQuery('.cookies').css("display", "block").hide().fadeIn(2000);
-  }
-        
-  jQuery('a.submit').click(function(){
-    jQuery('.cookies').fadeOut();
-    //sets the coookie to five minutes if the popup is submited (whole numbers = days)
-    setCookie( 'popupCookie', 'submited', 7 );
-  });
-  function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+  setTimeout(function(){
+    if( getCookie('popupCookie') != 'submited'){ 
+      jQuery('.cookies').css("display", "block").hide().fadeIn(2000);
     }
-    return "";
-    }
+          
+    jQuery('a.submit').click(function(){
+      jQuery('.cookies').fadeOut();
+      //sets the coookie to five minutes if the popup is submited (whole numbers = days)
+      setCookie( 'popupCookie', 'submited', 7 );
+    });
+	}, 5000);
 
-    function setCookie(cname, cvalue, exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-      var expires = "expires=" + d.toUTCString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
-	// }, 5000);
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+  }
+
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
 
   
 })( jQuery );
